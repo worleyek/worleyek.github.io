@@ -1,21 +1,20 @@
-
 const toggle = document.querySelector('.theme-toggle');
 
 if (toggle) {
-	// 1. Get saved theme, or fallback to 'dark' on their first visit
+	// get saved theme, or fallback to 'dark' on their first visit
 	const saved = localStorage.getItem('theme') || 'dark';
 
-	// 2. Apply it immediately to the HTML element
+	// apply it immediately to the HTML element
 	document.documentElement.dataset.theme = saved;
 
-	// 3. Set the button text based on what theme is currently active
+	// set the button text based on what theme is currently active
 	toggle.textContent = saved === 'dark' ? 'Light mode' : 'Dark mode';
 
 	toggle.addEventListener('click', () => {
-		// 4. Look at the active theme attribute to decide the next theme
+		// look at the active theme attribute to decide the next theme
 		const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
 
-		// 5. Update the attribute, storage, and button text cleanly
+		// update the attribute, storage, and button text cleanly
 		document.documentElement.dataset.theme = next;
 		localStorage.setItem('theme', next);
 		toggle.textContent = next === 'dark' ? 'Light mode' : 'Dark mode';
@@ -40,33 +39,67 @@ if (lb) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const containers = document.querySelectorAll('.image-container');
+  const lightbox = document.querySelector(".lightbox");
+  const expandedImage = lightbox?.querySelector("img");
+  const caption = lightbox?.querySelector(".lightbox-title");
 
-  containers.forEach(container => {
-    const img = container.querySelector('img');
-    if (img && img.getAttribute('alt')) {
-      // Create the overlay element
-      const overlay = document.createElement('div');
-      overlay.classList.add('image-overlay');
-      // Set its text to match the image's alt text
-      overlay.textContent = img.getAttribute('alt');
-      // Append it to the container
-      container.appendChild(overlay);
+  document.querySelectorAll(".image-container").forEach(container => {
+    const img = container.querySelector("img");
+    if (!img) return;
+
+    // use the custom title, falling back to the alt description
+    const title = img.dataset.title?.trim() || img.alt || "";
+
+    // create or update the hover title
+    if (title) {
+      let overlay = container.querySelector(".image-overlay");
+
+      if (!overlay) {
+        overlay = document.createElement("div");
+        overlay.classList.add("image-overlay");
+        container.appendChild(overlay);
+      }
+
+      overlay.textContent = title;
+    }
+
+    // show the image and its title when clicked or tapped
+    img.addEventListener("click", () => {
+      if (!lightbox || !expandedImage) return;
+
+      expandedImage.src = img.currentSrc || img.src;
+      expandedImage.alt = img.alt;
+
+      if (caption) caption.textContent = title;
+
+      lightbox.classList.add("open");
+    });
+  });
+
+  // click or tap the lightbox to close it
+  lightbox?.addEventListener("click", () => {
+    lightbox.classList.remove("open");
+  });
+
+  // also allow closing with Escape
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      lightbox?.classList.remove("open");
     }
   });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Select your button and mobile navigation menu
+  // select your button and mobile navigation menu
   const menuButton = document.querySelector('.menu');
   const mobileNav = document.querySelector('.mobile-nav');
 
-  // Listen for the click event on the hamburger button
+  // listen for the click event on the hamburger button
   menuButton.addEventListener('click', () => {
-    // Toggle your existing 'open' class on the navigation
+    // toggle existing 'open' class on the navigation
     const isOpen = mobileNav.classList.toggle('open');
     
-    // Dynamically update aria-expanded (true if open, false if closed)
+    // dynamically update aria-expanded (true if open, false if closed)
     menuButton.setAttribute('aria-expanded', isOpen);
   });
 });
