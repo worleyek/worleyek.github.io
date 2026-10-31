@@ -17,6 +17,7 @@ Welcome to the repository for my personal website.
 * **HTML5** - Semantic markup, modern document structure, and SEO-friendly tagging.
 * **CSS3** - Custom grid/flexbox layouts, responsive design rules, and cohesive typography styling.
 * **JavaScript (ES6+)** - Client-side logic handling dynamic theme states, DOM manipulation, persistence, and user interactions.
+* **Java (JDK 17+)** - Data validation, aggregation, and JSON export pipeline that prepares insurance claims data for the interactive dashboard.
 
 ### Assets & Design
 * **[Font Awesome](https://fontawesome.com/)** - Scalable vector icons for clean visual indicators, social networks, and navigation items.
@@ -34,11 +35,11 @@ Welcome to the repository for my personal website.
 If you want to view, review, or run this project locally on your machine:
 1. **Clone the repository**: 
    ```bash
-   git clone https://github.com/ekworley/ekworley.github.io
+   git clone https://github.com/worleyek/worleyek.github.io
    ```
 2. **Navigate into the project directory**: 
    ```bash
-   cd ekworley.github.io
+   cd worleyek.github.io
    ```
 3. **Open the project**: 
 
