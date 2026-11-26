@@ -4,17 +4,16 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Personal site of Emily Worley — data analyst based in the United States.">
-		
+
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="../styles.css">
 		<script src="https://kit.fontawesome.com/259dfad8e9.js" crossorigin="anonymous"></script>
-		<title>Emily Worley — worleyek.github.io</title>	
+		<title>Emily Worley — worleyek.github.io</title>
 	</head>
 
-<!--Header-->
-  <body>
+	<body>
 		<header class="site-header">
 			<div class="container">
 				<div class="header-inner">
@@ -22,39 +21,125 @@
 						<span class="brand-name">Emily Worley</span>
 						<span class="brand-sub">analyst · programmer · cat person</span>
 					</a>
-					
-				  <!--Navigation-->
+
 					<nav aria-label="Main">
-						<a href="../writing.html" class=""><i class="fa-solid fa-pencil"></i>writing</a>
-						<a href="../building.html" class=""><i class="fa-solid fa-code"></i>building</a>
-						<a href="../creating.html" class=""><i class="fa-solid fa-paintbrush"></i>creating</a>
-						<a href="../reading.html" class=""><i class="fa-solid fa-book"></i>reading</a>
+						<a href="../writing.html"><i class="fa-solid fa-pencil"></i>writing</a>
+						<a href="../building.html"><i class="fa-solid fa-code"></i>building</a>
+						<a href="../creating.html"><i class="fa-solid fa-paintbrush"></i>creating</a>
+						<a href="../reading.html" class="active" aria-current="page"><i class="fa-solid fa-book"></i>reading</a>
 					</nav>
-					<button class="menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+					<button class="menu" aria-expanded="false" aria-label="Open navigation menu"><i class="fa-solid fa-bars"></i></button>
 				</div>
 				<nav class="mobile-nav" aria-label="Mobile main">
-				  <a href="../writing.html" class=""><i class="fa-solid fa-pencil"></i>writing</a>
-				  <a href="../building.html" class=""><i class="fa-solid fa-code"></i>building</a>
-				  <a href="../creating.html" class=""><i class="fa-solid fa-paintbrush"></i>creating</a>
-					<a href="../reading.html" class=""><i class="fa-solid fa-book"></i>reading</a>
+					<a href="../writing.html"><i class="fa-solid fa-pencil"></i>writing</a>
+					<a href="../building.html"><i class="fa-solid fa-code"></i>building</a>
+					<a href="../creating.html"><i class="fa-solid fa-paintbrush"></i>creating</a>
+					<a href="../reading.html" class="active" aria-current="page"><i class="fa-solid fa-book"></i>reading</a>
 				</nav>
 			</div>
 		</header>
 
-<!--Page content-->
-    <main class="container">
-      <div class="header-container">
-        <h1 style="letter-spacing: 2px; font-size: 20px;"><b>READING</b></h1>
-        <span class="last-updated">Last updated: October 18, 2026</span> <!--LAST UPDATED-->
-      </div>
-    <!--2026 reading list-->
-      <h2 style="margin-top: 28px; letter-spacing: 2px; font-size: 16px;" class="muted"><b>2026</b></h2>
-      <ol reversed class="reading-list">
-		<li><strong>The Nothing Man</strong><span class="muted"> by Catherine Ryan Howard · <em>Currently reading</em></span></li>
-       <!-- We Used to Live Here entry -->
-		<li class="reading-entry"
-    data-title=">We Used to Live Here"
-    data-author="Marcus Kliewer"
+		<main class="container">
+			<div class="header-container">
+				<h1 style="letter-spacing: 2px; font-size: 20px;"><b>READING</b></h1>
+				<span class="last-updated">Last updated: October 18, 2026</span>
+			</div>
+
+			<!-- 2026 reading list -->
+			<h2 style="margin-top: 28px; letter-spacing: 2px; font-size: 16px;" class="muted"><b>2026</b></h2>
+			<ol reversed class="reading-list">
+				<li><strong>The Nothing Man</strong><span class="muted"> by Catherine Ryan Howard · <em>Currently reading</em></span></li>
+				<li class="reading-entry"
+				    data-title=">We Used to Live Here"
+				    data-author="Marcus Kliewer"
+				    data-rating="★★★★☆"
+				    data-spoilers="false">
+				    <strong>We Used to Live Here</strong>
+				  <span class="muted"> by Marcus Kliewer · </span>
+				  <button class="reading-review-trigger reading-rating-trigger"
+				          type="button"
+				          data-review-trigger
+				          aria-haspopup="dialog"
+				          aria-controls="reading-review-dialog"
+				          aria-label="Open my review of We Used to Live Here by Marcus Kliewer, rated 4 out of 5 stars">
+				    ★★★★☆
+				  </button>
+
+				  <template class="reading-review-content">
+				    <p>I really liked this book. I’ve read the original r/nosleep story, and I really enjoy and appreciate the direction this novel went.<br>
+						This book reads very naturally, yet the pacing rarely lets up. Kliewer blurs the line between real and imagined threats by turning social conditioning into the primary driver 
+						of the story’s dread and denying us a reliable narrator. It’s a dynamic that feels painfully relatable as someone living with severe anxiety, but it also serves as a surprisingly 
+						and unsettlingly effective device for horror.</p>
+				  </template>
+				</li>
+				<li><strong>The Stranger</strong><span class="muted"> by Albert Camus · ★★★☆☆</span></li>
+				<li><strong>Fables: The Wolf Among Us</strong><span class="muted">, a comic series published by Vertigo · ★★★★☆</span></li>
+				
+				
+			</ol>
+			
+
+			<!-- 2025 reading list -->
+			<h2 style="margin-top: 28px; letter-spacing: 2px; font-size: 16px;" class="muted"><b>2025</b></h2>
+			<ol reversed class="reading-list">
+				<li><strong>The Outermost House</strong><span class="muted"> by Henry Beston · ★★★★☆</span></li>
+			</ol>
+
+			<!-- 2023 reading list -->
+			<h2 style="margin-top: 28px; letter-spacing: 2px; font-size: 16px;" class="muted"><b>2023</b></h2>
+			<ol reversed class="reading-list">
+				<li><strong>A Happy Death</strong><span class="muted"> by Albert Camus · ★★☆☆☆</span></li>
+			</ol>
+		</main>
+
+		<!-- Review dialog: the JavaScript fills this in for the selected book. -->
+		<dialog class="reading-review-dialog" id="reading-review-dialog" aria-labelledby="reading-review-title" aria-describedby="reading-review-meta reading-review-spoiler">
+			<div class="reading-review-dialog-inner">
+				<div class="reading-review-header">
+					<div>
+						<p class="reading-review-eyebrow">MY REVIEW</p>
+					<h2 id="reading-review-title"></h2>
+					<p class="reading-review-meta" id="reading-review-meta"></p>
+				</div>
+					<button class="reading-review-close" id="reading-review-close" type="button" aria-label="Close review">
+						<i class="fa-solid fa-xmark" aria-hidden="true"></i>
+					</button>
+				</div>
+				<p class="reading-review-spoiler" id="reading-review-spoiler" role="status"></p>
+				<div class="reading-review-body" id="reading-review-body"></div>
+			</div>
+		</dialog>
+
+		<!-- Footer -->
+		<footer class="site-footer">
+			<div class="container footer-inner">
+				<button class="theme-toggle">Dark mode</button>
+				<a href="../index.html">worleyek.github.io</a>
+				<div>
+					<a href="https://github.com/worleyek" target="_blank" rel="noopener"><i class="fab fa-github fa-xl"></i></a>
+					<a href="https://linkedin.com/in/worleyek" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-xl"></i></a>
+				</div>
+			</div>
+		</footer>
+
+		<div class="lightbox">
+			<img alt="Expanded gallery image">
+		</div>
+
+		<script src="../script.js"></script>
+	</body>
+</html>
+
+<!--
+COPY/PASTE TEMPLATE FOR A BOOK WITH A REVIEW
+
+Only use this version once you have written the review. Replace the example text,
+set data-spoilers to "true" or "false", and keep the title/author/rating values
+consistent in the data attributes and visible text.
+
+<li class="reading-entry"
+    data-title="Book title"
+    data-author="Author name"
     data-rating="★★★★☆"
     data-spoilers="false">
   <button class="reading-review-trigger reading-title-trigger"
@@ -63,9 +148,9 @@
           aria-haspopup="dialog"
           aria-controls="reading-review-dialog"
           aria-label="Open my review of Book title">
-    <strong>We Used to Live Here</strong>
+    <strong>Book title</strong>
   </button>
-  <span class="muted"> by Marcus Kliewer · </span>
+  <span class="muted"> by Author name · </span>
   <button class="reading-review-trigger reading-rating-trigger"
           type="button"
           data-review-trigger
@@ -76,57 +161,10 @@
   </button>
 
   <template class="reading-review-content">
-    <p>I really liked this book. I’ve read the original r/nosleep story, and I really enjoy and appreciate the direction this novel went.
-
-This book reads very naturally, yet the pacing rarely lets up. Kliewer blurs the line between real and imagined threats by turning social conditioning into the primary driver of the story’s dread and denying us a reliable narrator. It’s a dynamic that feels painfully relatable as someone living with severe anxiety, but it also serves as a surprisingly and unsettlingly effective device for horror.</p>
+    <p>Write your review here. You can use more than one paragraph.</p>
+    <p>You can also use <em>italics</em> or <strong>bold text</strong>.</p>
   </template>
 </li>
-		<li><strong>The Stranger</strong><span class="muted"> by Albert Camus · ★★★☆☆</span></li>
-        <li><strong>Fables: The Wolf Among Us</strong><span class="muted">, a comic series published by Vertigo · ★★★★☆</span></li>
-      </ol>
-	<!-- 2025 Reading List -->
-	  <h2 style="margin-top: 28px; letter-spacing: 2px; font-size: 16px;" class="muted"><b>2025</b></h2>
-      <ol reversed class="reading-list">
-        <li><strong>The Outermost House</strong><span class="muted"> by Henry Beston · ★★★★☆</span></li>
-	  </ol>
-    <!--2023 reading list-->  
-      <h2 style="margin-top: 28px; letter-spacing: 2px; font-size: 16px;" class="muted"><b>2023</b></h2>
-      <ol reversed class="reading-list">
-        <li><strong>A Happy Death</strong><span class="muted"> by Albert Camus · ★★☆☆☆</span></li>
-	  </ol>
-    </main>
 
-<!--Copy and paste template for quick adding
-add new year:
-<h2 style="margin-top: 28px; letter-spacing: 2px; font-size: 16px;" class="muted">YEAR</h2>
-<ol reversed class="reading-list">
-</ol>
-
-add new list item:
-<li><strong>TITLE</strong><span class="muted"> by AUTHOR · RATING</span></li>
-
-★★★★★
-★★★★☆
-★★★☆☆
-★★☆☆☆
-★☆☆☆☆
+A book without a review can keep using the plain list-item format already on the page.
 -->
-
-<!--Footer-->
-    <footer class="site-footer">
-			<div class="container footer-inner">
-				<button class="theme-toggle">Dark mode</button>
-				<a href="../index.html">worleyek.github.io</a>
-				<div>
-				<!--Links-->
-				<a href="https://github.com/worleyek" target="_blank" rel="noopener"><i class="fab fa-github fa-xl"></i></a>
-				<a href="https://linkedin.com/in/worleyek" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-xl"></i></a>
-				</div>
-			</div>
-		</footer>
-		<div class="lightbox">
-			<img alt="Expanded gallery image">
-		</div>
-		<script src="../script.js"></script>
-	</body>
-</html>
