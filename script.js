@@ -147,9 +147,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const spoilerStatus = entry.dataset.spoilers;
 
     spoilerElement.textContent = spoilerStatus === 'true'
-      ? 'Spoilers ahead'
+      ? 'Contains spoilers'
       : spoilerStatus === 'false'
-        ? 'No spoilers!'
+        ? 'Does not contain spoilers'
         : 'Spoiler status not specified';
 
     spoilerElement.classList.toggle('has-spoilers', spoilerStatus === 'true');
