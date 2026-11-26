@@ -103,3 +103,69 @@ document.addEventListener('DOMContentLoaded', () => {
     menuButton.setAttribute('aria-expanded', isOpen);
   });
 });
+
+
+/* Opens the review dialog for either the book title or its star rating. */
+(() => {
+  const dialog = document.getElementById('reading-review-dialog');
+  if (!dialog) return;
+
+  const titleElement = document.getElementById('reading-review-title');
+  const metaElement = document.getElementById('reading-review-meta');
+  const spoilerElement = document.getElementById('reading-review-spoiler');
+  const bodyElement = document.getElementById('reading-review-body');
+  const closeButton = document.getElementById('reading-review-close');
+
+  if (!titleElement || !metaElement || !spoilerElement || !bodyElement || !closeButton) return;
+
+  const closeDialog = () => {
+    if (typeof dialog.close === 'function') {
+      dialog.close();
+    } else {
+      dialog.removeAttribute('open');
+    }
+  };
+
+  document.addEventListener('click', (event) => {
+    const trigger = event.target instanceof Element
+      ? event.target.closest('[data-review-trigger]')
+      : null;
+
+    if (!trigger) return;
+
+    const entry = trigger.closest('.reading-entry');
+    const reviewTemplate = entry?.querySelector('template.reading-review-content');
+
+    if (!entry || !reviewTemplate) return;
+
+    titleElement.textContent = entry.dataset.title || 'My review';
+
+    const author = entry.dataset.author || '';
+    const rating = entry.dataset.rating || '';
+    metaElement.textContent = [author, rating].filter(Boolean).join(' · ');
+
+    const spoilerStatus = entry.dataset.spoilers;
+
+    spoilerElement.textContent = spoilerStatus === 'true'
+      ? 'Spoilers ahead'
+      : spoilerStatus === 'false'
+        ? 'No spoilers!'
+        : 'Spoiler status not specified';
+
+    spoilerElement.classList.toggle('has-spoilers', spoilerStatus === 'true');
+
+    bodyElement.replaceChildren(reviewTemplate.content.cloneNode(true));
+
+    if (typeof dialog.showModal === 'function') {
+      dialog.showModal();
+    } else {
+      dialog.setAttribute('open', '');
+    }
+  });
+
+  closeButton.addEventListener('click', closeDialog);
+
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog) closeDialog();
+  });
+})();
