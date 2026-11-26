@@ -517,11 +517,11 @@ h3 {
 }
 
 .reading-entry[data-spoilers="true"] .reading-review-trigger::after {
-	content: 'Spoilers ahead';
+	content: 'Contains spoilers';
 }
 
 .reading-entry[data-spoilers="false"] .reading-review-trigger::after {
-	content: 'No spoilers!';
+	content: 'Does not contain spoilers';
 }
 
 .reading-review-trigger:hover::after,
