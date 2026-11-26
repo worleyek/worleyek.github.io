@@ -51,7 +51,29 @@
       <h2 style="margin-top: 28px; letter-spacing: 2px; font-size: 16px;" class="muted"><b>2026</b></h2>
       <ol reversed class="reading-list">
 		<li><strong>The Nothing Man</strong><span class="muted"> by Catherine Ryan Howard · <em>Currently reading</em></span></li>
-        <li><strong>We Used to Live Here</strong><span class="muted"> by Marcus Kliewer · ★★★★☆</span></li>
+       <!-- We Used to Live Here entry -->
+		<li class="reading-entry"
+			data-title="We Used to Live Here"
+			data-author="Marcus Kliewer"
+			data-rating="★★★★☆"
+			data-spoilers="false">
+			<strong>We Used to Live Here</strong>
+			<span class="muted"> by Marcus Kliewer · </span>
+			<button class="reading-review-trigger reading-rating-trigger"
+			  type="button"
+			  data-review-trigger
+			  aria-haspopup="dialog"
+			  aria-controls="reading-review-dialog"
+			  aria-label="Open my review of We Used to Live Here by Marcus Kliewer, rated four out of five stars">
+			★★★★☆
+			</button>
+		<!-- We Used to Live Here review content -->	
+		  <template class="reading-review-content">
+			<p>I really liked this book. I’ve read the original r/nosleep story, and I really enjoy and appreciate the direction this novel went.<br>This book reads very naturally, yet the pacing rarely lets up. 
+				Kliewer blurs the line between real and imagined threats by turning social conditioning into the primary driver of the story’s dread and denying us a reliable narrator. 
+				It’s a dynamic that feels painfully relatable as someone living with severe anxiety, but it also serves as a surprisingly and unsettlingly effective device for horror.</p>
+		  </template>
+		</li>
 		<li><strong>The Stranger</strong><span class="muted"> by Albert Camus · ★★★☆☆</span></li>
         <li><strong>Fables: The Wolf Among Us</strong><span class="muted">, a comic series published by Vertigo · ★★★★☆</span></li>
       </ol>
