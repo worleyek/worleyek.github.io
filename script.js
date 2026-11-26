@@ -103,8 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
     menuButton.setAttribute('aria-expanded', isOpen);
   });
 });
-
-
 /* Opens the review dialog for either the book title or its star rating. */
 (() => {
   const dialog = document.getElementById('reading-review-dialog');
@@ -135,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const entry = trigger.closest('.reading-entry');
     const reviewTemplate = entry?.querySelector('template.reading-review-content');
-
     if (!entry || !reviewTemplate) return;
 
     titleElement.textContent = entry.dataset.title || 'My review';
@@ -145,15 +142,14 @@ document.addEventListener('DOMContentLoaded', () => {
     metaElement.textContent = [author, rating].filter(Boolean).join(' · ');
 
     const spoilerStatus = entry.dataset.spoilers;
-
     spoilerElement.textContent = spoilerStatus === 'true'
       ? 'Spoilers ahead'
       : spoilerStatus === 'false'
         ? 'No spoilers!'
         : 'Spoiler status not specified';
-
     spoilerElement.classList.toggle('has-spoilers', spoilerStatus === 'true');
 
+    /* Clone the template so reviews can contain paragraphs and inline formatting. */
     bodyElement.replaceChildren(reviewTemplate.content.cloneNode(true));
 
     if (typeof dialog.showModal === 'function') {
@@ -165,6 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   closeButton.addEventListener('click', closeDialog);
 
+  /* Clicking the shaded area outside the dialog also closes it. */
   dialog.addEventListener('click', (event) => {
     if (event.target === dialog) closeDialog();
   });
